@@ -18,8 +18,9 @@ const Image = ({ className, src, alt, objectFit = 'cover' }: PropType) => {
                     src={src}
                     alt={alt}
                     fill
-                    priority
                     style={{ objectFit: objectFit }}
+                    quality={50}
+                    loading={'lazy'}
                 />
             </div>
         </>

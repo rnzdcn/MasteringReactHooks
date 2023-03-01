@@ -17,8 +17,8 @@ const Album = ({ albums }: { albums: AlbumType[] }) => {
         <div className={'relative '}>
           <div className={'flex flex-wrap'}>
             {albums.map((photo, i) => (
-                <Image key={i} src={photo.url} alt={photo.title} className={'h-48 w-48'} />
-            )).slice(0, 300)}
+              <Image key={i} src={photo.url} alt={photo.title} className={'h-48 w-48'} />
+            ))}
           </div>
         </div>
       </div>
@@ -29,7 +29,7 @@ const Album = ({ albums }: { albums: AlbumType[] }) => {
 export default Album
 
 export async function getServerSideProps() {
-  const albums = await (await fetch('https://jsonplaceholder.typicode.com/photos', {cache: "force-cache"})).json()
+  const albums = await (await fetch('https://jsonplaceholder.typicode.com/photos', { cache: 'force-cache' })).json()
 
   return {
     props: {
